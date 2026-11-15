@@ -1,0 +1,26 @@
+{
+  "small": {
+    "id": "small", "name": "Small Launcher (Electron-class)", "class": "small", "cost": 8, "reliability": 0.94,
+    "payloadToLEO": 300, "payloadToGTO": 150, "payloadToBeyond": 50,
+    "description": "Small rocket for CubeSats and smallsats to LEO.",
+    "why": "Cheap and quick, but can only lift small payloads to low orbit."
+  },
+  "medium": {
+    "id": "medium", "name": "Medium Launcher (Falcon 9-class)", "class": "medium", "cost": 45, "reliability": 0.97,
+    "payloadToLEO": 5500, "payloadToGTO": 2500, "payloadToBeyond": 800,
+    "description": "Workhorse medium rocket for most Earth and some lunar missions.",
+    "why": "Good balance of cost and capacity. Can reach LEO, GEO, and some lunar."
+  },
+  "heavy": {
+    "id": "heavy", "name": "Heavy Launcher (Falcon Heavy-class)", "class": "heavy", "cost": 110, "reliability": 0.96,
+    "payloadToLEO": 14000, "payloadToGTO": 7000, "payloadToBeyond": 2500,
+    "description": "Heavy-lift for large spacecraft and deep-space missions.",
+    "why": "Expensive but can send big payloads to the Moon and Mars."
+  },
+  "sls": {
+    "id": "sls", "name": "Super Heavy (SLS-class)", "class": "heavy", "cost": 400, "reliability": 0.93,
+    "payloadToLEO": 27000, "payloadToGTO": 12000, "payloadToBeyond": 6000,
+    "description": "The largest rocket, for flagship missions like Artemis.",
+    "why": "Massive capacity and cost. Overkill for most missions."
+  }
+}

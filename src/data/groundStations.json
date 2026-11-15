@@ -1,0 +1,12 @@
+{
+  "gs1": { "id": "gs1", "name": "Goldstone (NASA DSN)", "location": "California, USA", "latitude": 35.3, "longitude": -116.9,
+    "bands": ["S", "X", "Ka"], "contactMinutesPerDay": 180, "cost": 8, "reliability": 0.99 },
+  "gs2": { "id": "gs2", "name": "Canberra (NASA DSN)", "location": "Australian Capital Territory, Australia", "latitude": -35.4, "longitude": 149.0,
+    "bands": ["S", "X", "Ka"], "contactMinutesPerDay": 180, "cost": 8, "reliability": 0.99 },
+  "gs3": { "id": "gs3", "name": "Madrid (NASA DSN)", "location": "Madrid, Spain", "latitude": 40.4, "longitude": -4.3,
+    "bands": ["S", "X", "Ka"], "contactMinutesPerDay": 180, "cost": 8, "reliability": 0.99 },
+  "gs4": { "id": "gs4", "name": "Kiruna Ground Station", "location": "Kiruna, Sweden", "latitude": 67.8, "longitude": 20.4,
+    "bands": ["S", "X"], "contactMinutesPerDay": 90, "cost": 3, "reliability": 0.95 },
+  "gs5": { "id": "gs5", "name": "Wallops Island", "location": "Virginia, USA", "latitude": 37.9, "longitude": -75.5,
+    "bands": ["UHF", "S"], "contactMinutesPerDay": 120, "cost": 2, "reliability": 0.94 }
+}

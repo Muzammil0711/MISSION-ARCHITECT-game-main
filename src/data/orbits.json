@@ -1,0 +1,74 @@
+{
+  "leo": {
+    "id": "leo", "name": "Low Earth Orbit", "altitude": 400, "body": "earth", "period": 92,
+    "eclipseFraction": 0.36, "coverage": "Global (with enough ground stations)", "radiation": "low",
+    "lifetimeMonths": 24, "deltaV": 9400, "dataRateFactor": 1.0,
+    "description": "Close to Earth (~400 km). Quick orbits, cheap launch, easy to reach.",
+    "why": "Low radiation and high data rates. Best for Earth observation and beginner missions.",
+    "compatibleWith": ["earth", "telescope", "sandbox"],
+    "launchVehicleMassLimit": 5000
+  },
+  "ssorbit": {
+    "id": "ssorbit", "name": "Sun-Synchronous Orbit", "altitude": 700, "body": "earth", "period": 98,
+    "eclipseFraction": 0.3, "coverage": "Global, same local time every pass", "radiation": "low-medium",
+    "lifetimeMonths": 48, "deltaV": 9600, "dataRateFactor": 0.9,
+    "description": "Polar orbit where the satellite passes over the same spot at the same local time each day.",
+    "why": "Consistent lighting — ideal for climate and wildfire monitoring.",
+    "compatibleWith": ["earth", "sandbox"],
+    "launchVehicleMassLimit": 4500
+  },
+  "meo": {
+    "id": "meo", "name": "Medium Earth Orbit", "altitude": 20000, "body": "earth", "period": 730,
+    "eclipseFraction": 0.12, "coverage": "Regional to global", "radiation": "high",
+    "lifetimeMonths": 60, "deltaV": 10500, "dataRateFactor": 0.6,
+    "description": "Used by GPS/navigation satellites. Higher radiation (Van Allen belts).",
+    "why": "Good coverage but more radiation and lower data rate than LEO.",
+    "compatibleWith": ["telescope", "sandbox"],
+    "launchVehicleMassLimit": 3000
+  },
+  "geo": {
+    "id": "geo", "name": "Geostationary Orbit (GEO)", "altitude": 35786, "body": "earth", "period": 1436,
+    "eclipseFraction": 0.05, "coverage": "Fixed region (one-third of Earth)", "radiation": "medium",
+    "lifetimeMonths": 180, "deltaV": 12000, "dataRateFactor": 0.5,
+    "description": "Stays over one point on the equator. Needs a big launcher and lots of delta-v.",
+    "why": "Constant view of one region, but expensive to reach and weaker data link.",
+    "compatibleWith": ["telescope", "sandbox"],
+    "launchVehicleMassLimit": 2500
+  },
+  "lunar": {
+    "id": "lunar", "name": "Lunar Orbit", "altitude": 100, "body": "moon", "period": 118,
+    "eclipseFraction": 0.42, "coverage": "Moon surface", "radiation": "medium-high",
+    "lifetimeMonths": 24, "deltaV": 14000, "dataRateFactor": 0.2,
+    "description": "Orbiting the Moon. Long eclipses (two-week night) and high delta-v.",
+    "why": "Far from Earth: weaker signal, longer delay, needs more power for night.",
+    "compatibleWith": ["lunar", "sandbox"],
+    "launchVehicleMassLimit": 1500
+  },
+  "lagrange": {
+    "id": "lagrange", "name": "L1 / L2 Lagrange Point", "altitude": 1500000, "body": "sun", "period": 0,
+    "eclipseFraction": 0.0, "coverage": "Deep space / full sky", "radiation": "medium",
+    "lifetimeMonths": 120, "deltaV": 14500, "dataRateFactor": 0.15,
+    "description": "A gravitationally stable point a million km away (JWST is at L2). Great for telescopes.",
+    "why": "Very stable, far from Earth interference, but hard to reach and service.",
+    "compatibleWith": ["telescope", "sandbox"],
+    "launchVehicleMassLimit": 1200
+  },
+  "heliocentric": {
+    "id": "heliocentric", "name": "Mars Transfer / Heliocentric", "altitude": 0, "body": "sun", "period": 0,
+    "eclipseFraction": 0.0, "coverage": "Mars / interplanetary", "radiation": "high",
+    "lifetimeMonths": 60, "deltaV": 18000, "dataRateFactor": 0.05,
+    "description": "An orbit around the Sun, en route to or at Mars. The hardest destination.",
+    "why": "Long delay, high radiation, weak signal — advanced missions only.",
+    "compatibleWith": ["mars", "sandbox"],
+    "launchVehicleMassLimit": 1000
+  },
+  "molniya": {
+    "id": "molniya", "name": "HEO / Molniya", "altitude": 40000, "body": "earth", "period": 730,
+    "eclipseFraction": 0.2, "coverage": "High-latitude (polar) regions", "radiation": "very high",
+    "lifetimeMonths": 36, "deltaV": 11000, "dataRateFactor": 0.4,
+    "description": "Highly elliptical orbit that dwells over high latitudes (Russia/Canada).",
+    "why": "Good polar coverage, but passes through intense radiation belts.",
+    "compatibleWith": ["earth", "sandbox"],
+    "launchVehicleMassLimit": 2800
+  }
+}

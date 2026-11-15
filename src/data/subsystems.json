@@ -1,0 +1,89 @@
+{
+  "structure": {
+    "id": "structure", "name": "Bus / Structure",
+    "choices": {
+      "3U": { "id": "3u", "name": "3U CubeSat Bus", "tier": "Simple", "mass": 5, "power": 5, "cost": 0.1, "reliability": 0.97,
+        "description": "Tiny 3U CubeSat frame (~4 kg).", "why": "Smallest, cheapest option. Very limited payload.", "compatibleWith": ["earth", "sandbox"] },
+      "6U": { "id": "6u", "name": "6U CubeSat Bus", "tier": "Simple", "mass": 12, "power": 10, "cost": 0.25, "reliability": 0.97,
+        "description": "6U CubeSat frame (~12 kg).", "why": "Good starter bus for Earth observation.", "compatibleWith": ["earth", "lunar", "sandbox"] },
+      "12U": { "id": "12u", "name": "12U CubeSat Bus", "tier": "Advanced", "mass": 24, "power": 20, "cost": 0.5, "reliability": 0.96,
+        "description": "12U CubeSat frame (~24 kg).", "why": "More room for instruments, more power.", "compatibleWith": ["earth", "lunar", "sandbox"] },
+      "smallsat": { "id": "smallsat", "name": "Small Satellite Bus", "tier": "Advanced", "mass": 150, "power": 60, "cost": 6, "reliability": 0.95,
+        "description": "Small satellite bus (~150 kg).", "why": "Capable platform for telescopes and lunar orbiters.", "compatibleWith": ["telescope", "lunar", "mars", "sandbox"] },
+      "medium": { "id": "medium", "name": "Medium Satellite Bus", "tier": "Advanced", "mass": 500, "power": 180, "cost": 22, "reliability": 0.94,
+        "description": "Medium satellite bus (~500 kg).", "why": "Supports heavy instruments and big solar arrays.", "compatibleWith": ["telescope", "mars", "sandbox"] },
+      "large": { "id": "large", "name": "Large Satellite Bus", "tier": "Advanced", "mass": 1500, "power": 500, "cost": 90, "reliability": 0.93,
+        "description": "Large satellite bus (~1500 kg).", "why": "Flagship-scale. Expensive but very capable.", "compatibleWith": ["telescope", "mars", "sandbox"] }
+    }
+  },
+  "power": {
+    "id": "power", "name": "Power System",
+    "choices": {
+      "solar-simple": { "id": "solar-simple", "name": "Solar Panels (Simple)", "tier": "Simple", "mass": 8, "power": -60, "cost": 1.5, "reliability": 0.96,
+        "description": "Basic solar arrays.", "why": "Generates power in sunlight; cheap but low output.", "compatibleWith": ["earth", "telescope", "lunar", "mars", "sandbox"] },
+      "solar-adv": { "id": "solar-adv", "name": "Solar Panels (Advanced)", "tier": "Advanced", "mass": 12, "power": -160, "cost": 4, "reliability": 0.94,
+        "description": "High-efficiency solar arrays.", "why": "More power per area, lighter for the output.", "compatibleWith": ["telescope", "lunar", "mars", "sandbox"] },
+      "battery-simple": { "id": "battery-simple", "name": "Battery (Simple)", "tier": "Simple", "mass": 6, "power": 2, "cost": 1, "reliability": 0.95,
+        "description": "Basic battery (100 Wh).", "why": "Keeps you alive through eclipse.", "compatibleWith": ["earth", "lunar", "mars", "sandbox"] },
+      "battery-adv": { "id": "battery-adv", "name": "Battery (Advanced)", "tier": "Advanced", "mass": 8, "power": 2, "cost": 2.5, "reliability": 0.93,
+        "description": "High-density battery (300 Wh).", "why": "More energy in less mass.", "compatibleWith": ["lunar", "mars", "sandbox"] }
+    }
+  },
+  "comms": {
+    "id": "comms", "name": "Communications",
+    "choices": {
+      "uhf": { "id": "uhf", "name": "UHF Antenna", "tier": "Simple", "mass": 5, "power": 15, "cost": 1, "reliability": 0.98,
+        "description": "Low-rate UHF antenna.", "why": "Reliable but very slow downlink. LEO only.", "compatibleWith": ["earth", "sandbox"] },
+      "sband": { "id": "sband", "name": "S-band Antenna", "tier": "Simple", "mass": 8, "power": 25, "cost": 2, "reliability": 0.97,
+        "description": "S-band radio.", "why": "Standard for CubeSats; moderate data rate.", "compatibleWith": ["earth", "telescope", "lunar", "sandbox"] },
+      "xband": { "id": "xband", "name": "X-band Antenna", "tier": "Advanced", "mass": 15, "power": 60, "cost": 6, "reliability": 0.95,
+        "description": "High-gain X-band antenna.", "why": "Fast downlink for lots of science data.", "compatibleWith": ["telescope", "lunar", "mars", "sandbox"] },
+      "kaband": { "id": "kaband", "name": "Ka-band Antenna", "tier": "Advanced", "mass": 25, "power": 120, "cost": 12, "reliability": 0.93,
+        "description": "Ka-band high-rate antenna.", "why": "Fastest downlink; needs precise pointing.", "compatibleWith": ["mars", "telescope", "sandbox"] },
+      "dish": { "id": "dish", "name": "High-Gain Dish", "tier": "Advanced", "mass": 60, "power": 200, "cost": 25, "reliability": 0.92,
+        "description": "Steerable high-gain dish antenna.", "why": "Best for deep space (Mars/Lagrange). Heavy and power-hungry.", "compatibleWith": ["mars", "lagrange", "sandbox"] }
+    }
+  },
+  "computer": {
+    "id": "computer", "name": "Onboard Computer",
+    "choices": {
+      "cpu-simple": { "id": "cpu-simple", "name": "Flight Computer (Simple)", "tier": "Simple", "mass": 2, "power": 8, "cost": 0.8, "reliability": 0.95,
+        "description": "Basic radiation-tolerant computer.", "why": "Cheap and fine for simple missions.", "compatibleWith": ["earth", "sandbox"] },
+      "cpu-adv": { "id": "cpu-adv", "name": "Flight Computer (Advanced)", "tier": "Advanced", "mass": 4, "power": 18, "cost": 3.5, "reliability": 0.98,
+        "description": "Radiation-hardened processor.", "why": "More reliable for deep space and long missions.", "compatibleWith": ["telescope", "lunar", "mars", "sandbox"] }
+    }
+  },
+  "attitude": {
+    "id": "attitude", "name": "Attitude Control",
+    "choices": {
+      "rw-simple": { "id": "rw-simple", "name": "Reaction Wheels (Simple)", "tier": "Simple", "mass": 4, "power": 12, "cost": 2, "reliability": 0.94,
+        "description": "Reaction wheels for pointing.", "why": "Points the spacecraft; used by most missions.", "compatibleWith": ["earth", "telescope", "lunar", "sandbox"] },
+      "rw-adv": { "id": "rw-adv", "name": "Reaction Wheels + Star Tracker (Advanced)", "tier": "Advanced", "mass": 8, "power": 28, "cost": 6, "reliability": 0.96,
+        "description": "Precision pointing with a star tracker.", "why": "Needed for telescopes and precision science.", "compatibleWith": ["telescope", "mars", "sandbox"] },
+      "thruster": { "id": "thruster", "name": "Cold-Gas Thrusters", "tier": "Simple", "mass": 6, "power": 10, "cost": 2.5, "reliability": 0.93,
+        "description": "Small thrusters for orbit adjustment.", "why": "Helps maintain orbit and deorbit.", "compatibleWith": ["lunar", "mars", "sandbox"] }
+    }
+  },
+  "thermal": {
+    "id": "thermal", "name": "Thermal Control",
+    "choices": {
+      "thermal-simple": { "id": "thermal-simple", "name": "Passive Thermal", "tier": "Simple", "mass": 3, "power": 0, "cost": 0.5, "reliability": 0.99,
+        "description": "Radiators and insulation.", "why": "No power, but limited cooling capacity.", "compatibleWith": ["earth", "telescope", "lunar", "mars", "sandbox"] },
+      "thermal-adv": { "id": "thermal-adv", "name": "Active Thermal (heaters/coolers)", "tier": "Advanced", "mass": 8, "power": 30, "cost": 4, "reliability": 0.94,
+        "description": "Heaters and cryocoolers.", "why": "Needed for IR detectors and lunar night survival.", "compatibleWith": ["telescope", "lunar", "mars", "sandbox"] }
+    }
+  },
+  "propulsion": {
+    "id": "propulsion", "name": "Propulsion",
+    "choices": {
+      "none": { "id": "none", "name": "None", "tier": "Simple", "mass": 0, "power": 0, "cost": 0, "reliability": 1.0,
+        "description": "No propulsion.", "why": "Cheapest; cannot change orbit.", "compatibleWith": ["earth", "sandbox"] },
+      "coldgas": { "id": "coldgas", "name": "Cold-Gas Propulsion", "tier": "Simple", "mass": 8, "power": 5, "cost": 3, "reliability": 0.95,
+        "description": "Simple cold-gas thrusters.", "why": "Fine for small orbit tweaks.", "compatibleWith": ["earth", "lunar", "sandbox"] },
+      "ion": { "id": "ion", "name": "Ion Thruster", "tier": "Advanced", "mass": 20, "power": 200, "cost": 12, "reliability": 0.92,
+        "description": "High-efficiency ion engine.", "why": "Very efficient delta-v but needs lots of power.", "compatibleWith": ["telescope", "mars", "sandbox"] },
+      "chemical": { "id": "chemical", "name": "Chemical Propulsion", "tier": "Advanced", "mass": 40, "power": 15, "cost": 18, "reliability": 0.9,
+        "description": "Chemical rocket for major maneuvers.", "why": "High thrust for Mars orbit insertion.", "compatibleWith": ["mars", "lunar", "sandbox"] }
+    }
+  }
+}

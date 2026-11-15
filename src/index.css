@@ -1,0 +1,222 @@
+/* ==========================================================================
+   MISSION ARCHITECT — Design System
+   NASA-inspired mission-control dark theme. Professional, cohesive, high contrast.
+   All custom colors are CSS variables so they resolve reliably in builds.
+   ========================================================================== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Deep space backgrounds */
+    --bg-deep: 2 6 23;        /* #020617 */
+    --bg-surface: 15 23 42;   /* #0f172a */
+    --bg-card: 30 41 59;      /* #1e293b */
+    --bg-elevated: 51 65 85;  /* #334155 */
+
+    /* Foreground text */
+    --fg-primary: 248 250 252;   /* #f8fafc */
+    --fg-secondary: 203 213 225; /* #cbd5e1 */
+    --fg-muted: 148 163 184;     /* #94a3b8 */
+    --fg-dim: 100 116 139;       /* #64748b */
+
+    /* NASA brand accents */
+    --nasa-blue: 11 61 145;      /* #0b3d91 */
+    --nasa-blue-glow: 59 130 246; /* #3b82f6 */
+    --nasa-red: 234 67 53;       /* #ea4335 */
+    --nasa-red-glow: 248 113 113; /* #f87171 */
+
+    /* Status semantics */
+    --ok: 16 185 129;      /* #10b981 emerald */
+    --ok-glow: 52 211 153; /* #34d399 */
+    --warn: 245 158 11;    /* #f59e0b amber */
+    --warn-glow: 251 191 36; /* #fbbf24 */
+    --err: 239 68 68;      /* #ef4444 red */
+    --err-glow: 248 113 113; /* #f87171 */
+
+    /* UI chrome */
+    --border: 30 41 59;      /* #1e293b */
+    --border-hover: 51 65 85; /* #334155 */
+    --ring: 59 130 246;      /* #3b82f6 */
+
+    --radius: 0.75rem;
+    --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 40px -10px rgba(59, 130, 246, 0.25);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: rgb(var(--bg-deep));
+    color: rgb(var(--fg-primary));
+    background: radial-gradient(circle at 50% -10%, #0f172a 0%, #020617 70%, #020617 100%);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, 'Segoe UI Symbol', sans-serif;
+    overflow-x: hidden;
+  }
+
+  * {
+    border-color: rgb(var(--border));
+  }
+
+  /* Monospace data readouts */
+  .font-mono-data {
+    font-family: 'SF Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Glass panel */
+  .panel {
+    border-radius: 0.75rem;
+    border: 1px solid rgb(var(--border));
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+  }
+
+  .panel-elevated {
+    border-radius: 1rem;
+    border: 1px solid rgb(30, 41, 59);
+    background: rgba(2, 6, 23, 0.8);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Section header */
+  .section-head {
+    @apply flex items-center gap-2.5 mb-3;
+  }
+
+  .section-head .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: rgb(var(--nasa-blue));
+  }
+
+  .section-head .title {
+    @apply text-sm font-bold text-white tracking-tight uppercase;
+    color: rgb(var(--fg-primary));
+    letter-spacing: 0.05em;
+  }
+
+  .section-head .subtitle {
+    @apply text-xs mt-0.5;
+    color: rgb(var(--fg-muted));
+  }
+
+  /* KPI stat */
+  .stat {
+    @apply flex flex-col gap-0.5;
+  }
+  .stat .label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgb(var(--fg-muted));
+  }
+  .stat .value {
+    @apply font-mono-data text-xl font-bold text-white;
+  }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    width: 100%;
+    background: rgb(30, 41, 59);
+    border: 0;
+    margin: 1rem 0;
+  }
+
+  /* Pill / badge */
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-[10px] font-semibold whitespace-nowrap;
+    border: 1px solid rgb(30, 41, 59);
+    background: rgba(2, 6, 23, 0.5);
+    color: rgb(var(--fg-muted));
+  }
+  .pill-ok {
+    border-color: rgba(16, 185, 129, 0.5);
+    background: rgba(16, 185, 129, 0.1);
+    color: rgb(var(--ok-glow));
+  }
+  .pill-warn {
+    border-color: rgba(245, 158, 11, 0.5);
+    background: rgba(245, 158, 11, 0.1);
+    color: rgb(var(--warn-glow));
+  }
+  .pill-err {
+    border-color: rgba(239, 68, 68, 0.5);
+    background: rgba(239, 68, 68, 0.1);
+    color: rgb(var(--err-glow));
+  }
+  .pill-blue {
+    border-color: rgba(59, 130, 246, 0.5);
+    background: rgba(59, 130, 246, 0.1);
+    color: rgb(var(--nasa-blue-glow));
+  }
+
+  /* Toggle chip */
+  .chip {
+    @apply px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer select-none;
+    border: 1px solid rgb(30, 41, 59);
+    background: rgba(2, 6, 23, 0.4);
+    color: rgb(var(--fg-muted));
+  }
+  .chip:hover {
+    border-color: rgb(var(--border-hover));
+    color: rgb(var(--fg-primary));
+  }
+  .chip-active {
+    border-color: rgb(var(--nasa-blue-glow));
+    background: rgba(59, 130, 246, 0.1);
+    color: rgb(var(--nasa-blue-glow));
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+  }
+
+  /* Tooltip dot */
+  .tooltip-dot {
+    @apply inline-block w-1.5 h-1.5 rounded-full border border-current;
+  }
+  .tooltip-dot-ok { color: rgb(var(--ok-glow)); }
+  .tooltip-dot-warn { color: rgb(var(--warn-glow)); }
+  .tooltip-dot-err { color: rgb(var(--err-glow)); }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glass {
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .glass-strong {
+    background: rgba(2, 6, 23, 0.7);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

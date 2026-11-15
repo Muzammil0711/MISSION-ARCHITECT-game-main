@@ -1,0 +1,106 @@
+{
+  "earth": {
+    "id": "earth",
+    "name": "Earth Observation CubeSat",
+    "shortName": "EO CubeSat",
+    "difficulty": "Beginner",
+    "body": "earth",
+    "objective": "Monitor wildfires, floods, and climate from orbit",
+    "objectives": [
+      { "id": "obj-wildfire", "name": "Wildfire monitoring", "description": "Detect active wildfires and burn scars using thermal + optical imaging.", "scienceWeight": 40, "requiredInstruments": ["camera", "multispectral"], "minCoverage": 0.6 },
+      { "id": "obj-flood", "name": "Flood monitoring", "description": "Map flood extent using radar that sees through clouds.", "scienceWeight": 35, "requiredInstruments": ["radar", "camera"], "minCoverage": 0.5 },
+      { "id": "obj-climate", "name": "Climate tracking", "description": "Track atmospheric CO2 and temperature trends over time.", "scienceWeight": 25, "requiredInstruments": ["spectrometer", "camera"], "minCoverage": 0.7 }
+    ],
+    "minScienceReturn": 60,
+    "budgetCap": 12,
+    "durationMonths": 18,
+    "nasaAnalog": "Landsat / VIIRS (Suomi NPP)",
+    "nasaLink": "https://landsat.gsfc.nasa.gov/",
+    "description": "A low-cost CubeSat in Low Earth Orbit that images Earth to help emergency responders and climate scientists. A great first mission.",
+    "why": "LEO is close to Earth, so you get high-resolution images and cheap launches — ideal for beginners.",
+    "startingBudget": 12
+  },
+  "telescope": {
+    "id": "telescope",
+    "name": "Space Telescope",
+    "shortName": "Space Telescope",
+    "difficulty": "Engineer",
+    "body": "earth",
+    "objective": "Observe the universe in a chosen wavelength",
+    "objectives": [
+      { "id": "obj-optical", "name": "Optical astronomy", "description": "Visible-light imaging of stars and galaxies (like Hubble).", "scienceWeight": 30, "requiredInstruments": ["camera"], "minCoverage": 0.3 },
+      { "id": "obj-ir", "name": "Infrared astronomy", "description": "See through dust clouds and observe cool objects (like JWST).", "scienceWeight": 35, "requiredInstruments": ["ir"], "minCoverage": 0.3 },
+      { "id": "obj-uv", "name": "Ultraviolet astronomy", "description": "Study hot young stars and active galaxies.", "scienceWeight": 20, "requiredInstruments": ["uv"], "minCoverage": 0.3 },
+      { "id": "obj-xray", "name": "X-ray astronomy", "description": "Observe black holes and supernova remnants (like Chandra).", "scienceWeight": 15, "requiredInstruments": ["xray"], "minCoverage": 0.3 }
+    ],
+    "minScienceReturn": 70,
+    "budgetCap": 45,
+    "durationMonths": 60,
+    "nasaAnalog": "Hubble / JWST / Chandra",
+    "nasaLink": "https://www.jwst.nasa.gov/",
+    "description": "A space telescope that must stay pointed at distant stars for years. Wavelength choice drives instrument, cooling, and orbit decisions.",
+    "why": "Telescopes need stable pointing, thermal control, and the right detectors for their wavelength. More complex than a CubeSat.",
+    "startingBudget": 45
+  },
+  "lunar": {
+    "id": "lunar",
+    "name": "Lunar Orbiter / Lander",
+    "shortName": "Lunar Mission",
+    "difficulty": "Engineer",
+    "body": "moon",
+    "objective": "Map the Moon and scout landing sites",
+    "objectives": [
+      { "id": "obj-map", "name": "Lunar mapping", "description": "Map the lunar surface for future landing sites and resources.", "scienceWeight": 50, "requiredInstruments": ["camera", "multispectral"], "minCoverage": 0.8 },
+      { "id": "obj-magnet", "name": "Magnetic field", "description": "Measure the Moon's weak magnetic field with a magnetometer.", "scienceWeight": 30, "requiredInstruments": ["magnetometer"], "minCoverage": 0.4 },
+      { "id": "obj-water", "name": "Water ice detection", "description": "Search for water ice in permanently shadowed craters.", "scienceWeight": 20, "requiredInstruments": ["ir", "spectrometer"], "minCoverage": 0.3 }
+    ],
+    "minScienceReturn": 65,
+    "budgetCap": 80,
+    "durationMonths": 24,
+    "nasaAnalog": "LRO (Lunar Reconnaissance Orbiter)",
+    "nasaLink": "https://lro.gsfc.nasa.gov/",
+    "description": "Go to the Moon. You need more delta-v, a lunar-capable launcher, and survival through two-week lunar nights.",
+    "why": "The Moon is far: more radiation, longer eclipses, and you need a bigger rocket than LEO.",
+    "startingBudget": 80
+  },
+  "mars": {
+    "id": "mars",
+    "name": "Mars Orbiter",
+    "shortName": "Mars Mission",
+    "difficulty": "Mission Director",
+    "body": "mars",
+    "objective": "Study Mars atmosphere, surface, and relay surface data",
+    "objectives": [
+      { "id": "obj-atmos", "name": "Atmosphere", "description": "Profile Mars' atmosphere and weather.", "scienceWeight": 35, "requiredInstruments": ["spectrometer", "camera"], "minCoverage": 0.6 },
+      { "id": "obj-surface", "name": "Surface mapping", "description": "High-resolution imaging of the Martian surface.", "scienceWeight": 40, "requiredInstruments": ["camera"], "minCoverage": 0.7 },
+      { "id": "obj-relay", "name": "Data relay", "description": "Relay data from Mars surface rovers back to Earth.", "scienceWeight": 25, "requiredInstruments": ["camera"], "minCoverage": 0.5 }
+    ],
+    "minScienceReturn": 75,
+    "budgetCap": 200,
+    "durationMonths": 60,
+    "nasaAnalog": "MRO (Mars Reconnaissance Orbiter)",
+    "nasaLink": "https://mars.nasa.gov/mro/",
+    "description": "An advanced interplanetary mission. Long cruise, high radiation, and an Earth-Mars link with minutes of delay.",
+    "why": "Mars is the hardest destination: enormous delta-v, long delays, and you must design for years of autonomy.",
+    "startingBudget": 200
+  },
+  "sandbox": {
+    "id": "sandbox",
+    "name": "Sandbox",
+    "shortName": "Sandbox",
+    "difficulty": "Mission Director",
+    "body": "earth",
+    "objective": "No predefined objective — build anything",
+    "objectives": [
+      { "id": "obj-sandbox", "name": "Free choice", "description": "Design any mission you like with no budget cap.", "scienceWeight": 100, "requiredInstruments": [], "minCoverage": 0 }
+    ],
+    "minScienceReturn": 0,
+    "budgetCap": null,
+    "durationMonths": 120,
+    "nasaAnalog": "None (sandbox)",
+    "nasaLink": "",
+    "description": "Unlimited budget, no objective, no constraints. Experiment freely to learn how the systems interact.",
+    "why": "No goals means no wrong answers — good for learning and tinkering.",
+    "startingBudget": null
+  }
+}

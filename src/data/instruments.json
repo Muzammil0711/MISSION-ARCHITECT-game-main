@@ -1,0 +1,86 @@
+{
+  "camera": {
+    "id": "camera", "name": "Optical Camera", "type": "camera",
+    "mass": 6, "power": 15, "cost": 2, "dataRate": 4, "scienceValue": 22,
+    "compatibleObjectives": ["obj-wildfire", "obj-flood", "obj-climate", "obj-optical", "obj-map", "obj-surface", "obj-atmos", "obj-relay"],
+    "description": "Takes visible-light photographs of the planet or stars.",
+    "why": "The workhorse imager. Good for general imaging and change detection."
+  },
+  "multispectral": {
+    "id": "multispectral", "name": "Multispectral Imager", "type": "multispectral",
+    "mass": 10, "power": 25, "cost": 4, "dataRate": 8, "scienceValue": 30,
+    "compatibleObjectives": ["obj-wildfire", "obj-climate", "obj-map", "obj-surface", "obj-water"],
+    "description": "Images in multiple wavelength bands (e.g., near-infrared) to tell vegetation from water.",
+    "why": "Sees more than the human eye. Key for climate and land-cover science."
+  },
+  "radar": {
+    "id": "radar", "name": "Synthetic Aperture Radar (SAR)", "type": "radar",
+    "mass": 45, "power": 200, "cost": 12, "dataRate": 20, "scienceValue": 40,
+    "compatibleObjectives": ["obj-flood", "obj-map", "obj-surface"],
+    "description": "Radar that penetrates clouds and works at night.",
+    "why": "All-weather imaging, but heavy, power-hungry, and produces lots of data."
+  },
+  "spectrometer": {
+    "id": "spectrometer", "name": "Spectrometer", "type": "spectrometer",
+    "mass": 14, "power": 35, "cost": 7, "dataRate": 12, "scienceValue": 35,
+    "compatibleObjectives": ["obj-climate", "obj-atmos", "obj-water"],
+    "description": "Measures light intensity by wavelength to identify gases and minerals.",
+    "why": "How we detect CO2, methane, and surface minerals."
+  },
+  "magnetometer": {
+    "id": "magnetometer", "name": "Magnetometer", "type": "magnetometer",
+    "mass": 4, "power": 6, "cost": 2, "dataRate": 0.5, "scienceValue": 15,
+    "compatibleObjectives": ["obj-magnet"],
+    "description": "Measures magnetic fields around a planet or moon.",
+    "why": "Light and cheap, but only useful for magnetism science."
+  },
+  "ir": {
+    "id": "ir", "name": "Infrared Detector", "type": "ir",
+    "mass": 20, "power": 60, "cost": 9, "dataRate": 10, "scienceValue": 32,
+    "compatibleObjectives": ["obj-climate", "obj-water", "obj-ir"],
+    "description": "Sees heat. Needs a cryocooler, which consumes extra power.",
+    "why": "Great for wildfire hotspots and water ice, but needs cooling."
+  },
+  "uv": {
+    "id": "uv", "name": "UV Detector", "type": "uv",
+    "mass": 8, "power": 18, "cost": 5, "dataRate": 3, "scienceValue": 18,
+    "compatibleObjectives": ["obj-uv"],
+    "description": "Observes ultraviolet light from hot stars and young galaxies.",
+    "why": "Blocked by Earth's atmosphere, so it must go to space."
+  },
+  "xray": {
+    "id": "xray", "name": "X-ray Detector", "type": "xray",
+    "mass": 60, "power": 110, "cost": 18, "dataRate": 6, "scienceValue": 45,
+    "compatibleObjectives": ["obj-xray"],
+    "description": "Images X-rays from black holes and supernova remnants.",
+    "why": "Very heavy and needs shielding; only for X-ray science."
+  },
+  "lidar": {
+    "id": "lidar", "name": "Laser Altimeter (LIDAR)", "type": "camera",
+    "mass": 18, "power": 55, "cost": 10, "dataRate": 5, "scienceValue": 28,
+    "compatibleObjectives": ["obj-map", "obj-surface", "obj-water"],
+    "description": "Fires laser pulses to measure surface height precisely.",
+    "why": "Makes topographic maps and measures ice-sheet height."
+  },
+  "gamma": {
+    "id": "gamma", "name": "Gamma-Ray Spectrometer", "type": "spectrometer",
+    "mass": 22, "power": 40, "cost": 11, "dataRate": 2, "scienceValue": 25,
+    "compatibleObjectives": ["obj-map", "obj-water"],
+    "description": "Maps elemental composition by detecting gamma rays from the surface.",
+    "why": "Good for finding water and minerals on airless bodies."
+  },
+  "magmeter": {
+    "id": "magmeter", "name": "Fluxgate Magnetometer", "type": "magnetometer",
+    "mass": 3, "power": 4, "cost": 1.5, "dataRate": 0.3, "scienceValue": 12,
+    "compatibleObjectives": ["obj-magnet"],
+    "description": "Simple, low-power magnetic-field sensor.",
+    "why": "Tiny and cheap; good for beginner magnetic surveys."
+  },
+  "auroraCam": {
+    "id": "auroraCam", "name": "Aurora / Airglow Camera", "type": "camera",
+    "mass": 7, "power": 14, "cost": 2.5, "dataRate": 3, "scienceValue": 16,
+    "compatibleObjectives": ["obj-climate", "obj-atmos"],
+    "description": "Implements night-side aurora and atmospheric emission imaging.",
+    "why": "Specialized atmospheric science camera."
+  }
+}
